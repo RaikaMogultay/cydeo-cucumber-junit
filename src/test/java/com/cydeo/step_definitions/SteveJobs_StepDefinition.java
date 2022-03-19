@@ -15,6 +15,7 @@ public class SteveJobs_StepDefinition {
     @When("user is on the Google search page")
     public void user_is_on_the_google_search_page() {
         Driver.getDriver().get("https://www.google.com/");
+
     }
     @Then("user should see title is the Google")
     public void user_should_see_title_is_the_google() {

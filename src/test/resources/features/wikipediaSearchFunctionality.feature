@@ -1,4 +1,4 @@
-@UnitTest
+@unit
 Feature: Wikipedia search functionality title verification
   Agile story: As a user, when I search Steve Jobs on Wikipedia search box
   I should be able to see Steve Jobs in the wiki title
