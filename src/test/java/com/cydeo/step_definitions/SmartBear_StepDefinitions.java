@@ -83,5 +83,4 @@ public class SmartBear_StepDefinitions {
         Assert.assertEquals(string,smartBearPage.nameRow.getText());
     }
 
-
 }
