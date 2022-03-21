@@ -83,4 +83,68 @@ public class SmartBear_StepDefinitions {
         Assert.assertEquals(string,smartBearPage.nameRow.getText());
     }
 
+
+    @And("User enters <Quantity> to quantity")
+    public void userEntersQuantityToQuantity(String Quantity) {
+        smartBearPage.quantityBox.sendKeys(Keys.BACK_SPACE +Quantity);
+    }
+
+    @And("User enters <Name> to costumer name")
+    public void userEntersNameToCostumerName(String Name) {
+        smartBearPage.customerNameBox.sendKeys(Name);
+    }
+
+    @And("User enters <Street> to street")
+    public void userEntersStreetToStreet(String Street) {
+        smartBearPage.streetBox.sendKeys(Street);
+    }
+
+    @And("User enters <City> to city")
+    public void userEntersCityToCity(String City) {
+        smartBearPage.cityBox.sendKeys(City);
+    }
+
+    @And("User enters <State> to state")
+    public void userEntersStateToState(String State) {
+        smartBearPage.stateBox.sendKeys(State);
+    }
+
+    @And("User selects  {string} as a credit type")
+    public void userSelectsAsACreditType(String string) {
+        smartBearPage.visaRadioButton.click();
+       /* for (WebElement each : smartBear.creditCardType) {
+          if (each.getAttribute("value").equals(CrType)) {
+              each.click();
+         */  }
+
+    @And("User enters <CreditCardNum> to card number")
+    public void userEntersCreditCardNumToCardNumber(String CreditCardNum) {
+        smartBearPage.cardNumber.sendKeys(CreditCardNum);
+
+    }
+
+    @And("User enters <Date> to expiration date")
+    public void userEntersDateToExpirationDate(String Date) {
+        smartBearPage.cardDate.sendKeys(Date);
+
+    }
+    @Then("User verifies <Names> are in the list")
+    public void userVerifiesAreInTheList(String Names) {
+        smartBearPage.processButton.click();
+        smartBearPage.viewAllOrderTab.click();
+        String actual = smartBearPage.nameRow.getText();
+        Assert.assertEquals("Order Verification", Names, actual);
+    }
+
+    @And("User enters {string} to zip")
+    public void userEntersToZip(String arg0) {
+        smartBearPage.zipBox.sendKeys(arg0);
+    }
+
+
+    @Given("User selects {string} from product dropdown")
+    public void userSelectsFromProductDropdown(String arg0) {
+        Select select = new Select(smartBearPage.productDropdown);
+        select.selectByVisibleText(arg0);
+    }
 }
