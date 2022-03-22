@@ -147,4 +147,5 @@ public class SmartBear_StepDefinitions {
         Select select = new Select(smartBearPage.productDropdown);
         select.selectByVisibleText(arg0);
     }
+
 }

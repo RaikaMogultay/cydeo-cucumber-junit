@@ -8,9 +8,9 @@ import java.util.Set;
 public class BrowserUtils {
 
     /*
-  This method will accept int (in seconds) and execute Thread.sleep
-  for given duration
-   */
+ This method will accept int (in seconds) and execute Thread.sleep
+ for given duration
+  */
     public static void sleep(int second){
         second *=1000;
         try {
@@ -20,7 +20,6 @@ public class BrowserUtils {
         }
     }
 
-
     /*
     This method accepts 3 arguments.
     Arg1: webdriver
@@ -28,7 +27,7 @@ public class BrowserUtils {
         - If condition matches, will break loop.
     Arg3: expectedInTitle to be compared against actualTitle
      */
-    public static void switchWindowAndVerify( String expectedInUrl, String expectedInTitle){
+    public static void switchWindowAndVerify(String expectedInUrl, String expectedInTitle){
 
         Set<String> allWindowsHandles = Driver.getDriver().getWindowHandles();
 
@@ -55,5 +54,13 @@ public class BrowserUtils {
 
         Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
 
+    }
+
+    /**
+     * This method will accept a String as expected value and verify actual URL CONTAINS the value.
+     * @param expectedInURL
+     */
+    public static void verifyURLContains(String expectedInURL){
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 }
